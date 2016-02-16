@@ -15,12 +15,22 @@
 #define GRIDVIEW_H
 #include <glib.h>
 #include <UIKit.h>
-class GridView {
+#include "CategoryCard.h"
+
+class GridView : public UIView, public CategoryCardDelegate, public CATimelineProtocol {
 public:
 		UIView *containerView;
     GridView(gint rows, gint columns);
     GridView(const GridView& orig);
+    void didTapBigButton(UIView *view);
+    void transitionDidFinish(CATimeline *timeline);
+    void didProgress(CATimeline *timeline,int msecs);
+    void brightTransition(UIView *view);
+    void dimTransition(UIView *view);
     virtual ~GridView();
+    CategoryCard *gridCards[8];
+    gchar *bgImages[8];
+    gchar *titles[8];
 private:
 
 };

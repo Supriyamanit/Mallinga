@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/AppDelegate.o \
+	${OBJECTDIR}/CategoryCard.o \
 	${OBJECTDIR}/GridView.o \
 	${OBJECTDIR}/main.o
 
@@ -68,6 +69,11 @@ ${OBJECTDIR}/AppDelegate.o: AppDelegate.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AppDelegate.o AppDelegate.cpp
+
+${OBJECTDIR}/CategoryCard.o: CategoryCard.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CategoryCard.o CategoryCard.cpp
 
 ${OBJECTDIR}/GridView.o: GridView.cpp 
 	${MKDIR} -p ${OBJECTDIR}
