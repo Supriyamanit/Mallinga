@@ -26,6 +26,7 @@ AppDelegate::~AppDelegate() {
 
 void AppDelegate::didLaunchApplicationWithOption(int argc, char** argv, UIApplication* application) {
   homeGrid = new GridView( 2, 4);
+  application->superView->setBackgroundColor(CLUTTER_COLOR_Black);
   application->superView->addSubView(homeGrid->containerView);
 
 

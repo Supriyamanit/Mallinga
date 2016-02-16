@@ -14,28 +14,28 @@
 #include "GridView.h"
 #include "constants.h"
 #include "CategoryCard.h"
-gfloat columnGap = 10.0;
-gfloat rowGap = 10.0;
+gfloat columnGap = 5.0;
+gfloat rowGap = 5.0;
 
 GridView::GridView(gint rows, gint columns) {
 
-	bgImages[0] = "images/accesories-and-footwear/1.jpg";
-  bgImages[1] = "images/apparel/1.jpg";
-  bgImages[2] = "images/dining/1.jpg";
-  bgImages[3] = "images/electronics/1.jpg";
-  bgImages[4] = "images/entertaitment/1.jpg";
-  bgImages[5] = "images/health-and-beauty/1.jpg";
-  bgImages[6] = "images/home-and-lifestyle/1.jpg";
-  bgImages[7] = "images/toys-and-gifts/1.jpg";
+	bgImages[0] = "images/apparel/1.jpg";
+  bgImages[1] = "images/accesories-and-footwear/1.jpg";
+  bgImages[2] = "images/health-and-beauty/1.jpg";
+  bgImages[3] = "images/home-and-lifestyle/1.jpg";
+  bgImages[4] = "images/electronics/1.jpg";
+  bgImages[5] = "images/toys-and-gifts/1.jpg";
+	bgImages[6] = "images/dining/1.jpg";
+  bgImages[7] = "images/entertaitment/1.jpg";
   
-  titles[0] = "Accessories";
-  titles[1] = "Apparel";
-  titles[2] = "Dining";
-  titles[3] = "Electronics";
-  titles[4] = "Entertainment";
-  titles[5] = "Health & Beauty";
-  titles[6] = "Home & Lifestyle";
-  titles[7] = "Toys & Gifts";
+  titles[0] = "Apparel";
+  titles[1] = "Accessories & Footwear";
+  titles[2] = "Health & Beauty";
+  titles[3] = "Home & Lifestyle";
+  titles[4] = "Electronics";
+  titles[5] = "Toys & Gifts";
+  titles[6] = "Dining";
+  titles[7] = "Entertainment";
 
 	gfloat widthPerCell = (SCREEN_WIDTH - (columns + 1)*columnGap)/columns ;
 	gfloat heightPerCell = (SCREEN_HEIGHT - (rows + 1)*rowGap)/rows ;
@@ -59,14 +59,16 @@ GridView::~GridView() {
 }
 
 void GridView::didTapBigButton(UIView *view) {
-  
+	for(int i=0; i<8; i++){
+		gridCards[i]->midLayer->removeAllTransition();
+	}
 }
 
 void GridView::brightTransition(UIView* layer){
   CATransition* rotateTransition = new CATransition("opacity");
   rotateTransition->setFromValue(G_TYPE_INT, layer->getOpacity());
   rotateTransition->setToValue(G_TYPE_INT, 0);
-  rotateTransition->setDuration(1000);
+  rotateTransition->setDuration(3000);
   rotateTransition->setData("actor", (UIView*)layer);
 
   layer->setData("transitionState", (char*)"on");
@@ -80,7 +82,7 @@ void GridView::dimTransition(UIView* layer){
   CATransition* rotateTransition = new CATransition("opacity");
   rotateTransition->setFromValue(G_TYPE_INT, layer->getOpacity());
   rotateTransition->setToValue(G_TYPE_INT, 155);
-  rotateTransition->setDuration(1000);
+  rotateTransition->setDuration(3000);
   layer->setData("transitionState", (char*)"on");
   rotateTransition->setData("actor", (UIView*)layer);
   rotateTransition->setData("name", (char*)"dimtransition");

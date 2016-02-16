@@ -42,12 +42,12 @@ void CategoryCard::setupWith(char *imageName, char *title, gfloat width, gfloat 
   this->addSubView(this->midLayer);
   
   this->lblTitle = new UILabel();
-  this->lblTitle->setFontWithSize("DIN Condensed,20");
+  this->lblTitle->setFontWithSize("DIN Condensed,24");
   this->lblTitle->setTextColor(CLUTTER_COLOR_White);
   this->lblTitle->setTextAlignment(PANGO_ALIGN_CENTER);
   this->lblTitle->setText(title);
   this->lblTitle->setLineWrap(TRUE);
-  this->lblTitle->setSize(320,300);
+  this->lblTitle->setPosition(10, 10);
 
   this->addSubView(this->lblTitle);
   this->setClip(0,0,this->getWidth(),this->getHeight());
