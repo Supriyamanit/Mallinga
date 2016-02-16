@@ -5,6 +5,8 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>AppDelegate.h</itemPath>
+      <itemPath>GridView.h</itemPath>
+      <itemPath>constants.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -14,6 +16,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>AppDelegate.cpp</itemPath>
+      <itemPath>GridView.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -73,6 +76,12 @@
       </item>
       <item path="AppDelegate.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="GridView.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GridView.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="constants.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -100,6 +109,12 @@
       <item path="AppDelegate.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="AppDelegate.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GridView.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GridView.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="constants.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

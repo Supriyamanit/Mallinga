@@ -1,7 +1,4 @@
-build/Debug/GNU-MacOSX/AppDelegate.o: AppDelegate.cpp AppDelegate.h \
-  ../UIKit/UIKit.h ../UIKit/UIApplication.h ../UIKit/UIHeaders.h \
-  /usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter.h \
-  /usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter-config.h \
+build/Debug/GNU-MacOSX/GridView.o: GridView.cpp GridView.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/galloca.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/gtypes.h \
@@ -78,6 +75,9 @@ build/Debug/GNU-MacOSX/AppDelegate.o: AppDelegate.cpp AppDelegate.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/deprecated/grel.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/deprecated/gthread.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/glib-autocleanups.h \
+  ../UIKit/UIKit.h ../UIKit/UIApplication.h ../UIKit/UIHeaders.h \
+  /usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter.h \
+  /usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter-config.h \
   /usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter-types.h \
   /usr/local/Cellar/cairo/1.14.6/include/cairo/cairo.h \
   /usr/local/Cellar/cairo/1.14.6/include/cairo/cairo-version.h \
@@ -586,19 +586,9 @@ build/Debug/GNU-MacOSX/AppDelegate.o: AppDelegate.cpp AppDelegate.h \
   ../UIKit/UIBinLayout.h ../UIKit/UIFlowLayout.h ../UIKit/UIScrollView.h \
   ../UIKit/UIPageControl.h ../UIKit/UITapGestureRecognizer.h \
   ../UIKit/UIPanGestureRecognizer.h ../UIKit/UIVideoPlayer.h \
-  ../UIKit/UIPlayer.h ../UIKit/UIButton.h GridView.h
+  ../UIKit/UIPlayer.h ../UIKit/UIButton.h constants.h
 
-AppDelegate.h:
-
-../UIKit/UIKit.h:
-
-../UIKit/UIApplication.h:
-
-../UIKit/UIHeaders.h:
-
-/usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter.h:
-
-/usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter-config.h:
+GridView.h:
 
 /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib.h:
 
@@ -751,6 +741,16 @@ AppDelegate.h:
 /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/deprecated/gthread.h:
 
 /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/glib-autocleanups.h:
+
+../UIKit/UIKit.h:
+
+../UIKit/UIApplication.h:
+
+../UIKit/UIHeaders.h:
+
+/usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter.h:
+
+/usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter-config.h:
 
 /usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter-types.h:
 
@@ -1798,4 +1798,4 @@ AppDelegate.h:
 
 ../UIKit/UIButton.h:
 
-GridView.h:
+constants.h:

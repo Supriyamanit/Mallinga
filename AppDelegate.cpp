@@ -12,6 +12,8 @@
  */
 
 #include "AppDelegate.h"
+#include "GridView.h"
+static GridView *homeGrid;
 
 AppDelegate::AppDelegate() {
 }
@@ -23,7 +25,9 @@ AppDelegate::~AppDelegate() {
 }
 
 void AppDelegate::didLaunchApplicationWithOption(int argc, char** argv, UIApplication* application) {
-    
+  homeGrid = new GridView( 2, 4);
+  application->superView->addSubView(homeGrid->containerView);
+
 
 }
 
