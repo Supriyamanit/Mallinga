@@ -55,21 +55,23 @@ void CategoryCard::setupWith(char *imageName, char *title, gfloat width, gfloat 
 
 void CategoryCard::touchBegan(ClutterEvent* event) {
   
-  this->midLayer->setEasing(0.0,DEFAULT_ANIMATION_SPEED,CLUTTER_LINEAR);
-  this->midLayer->setAlpha(0);
-  this->midLayer->restoreEasing();
-  this->baseImage->setEasing(0.0,DEFAULT_ANIMATION_SPEED,CLUTTER_LINEAR);
-  this->baseImage->setScale(1.1,1.1);
-  this->baseImage->restoreEasing();
+  
+  // this->midLayer->setEasing(0.0,DEFAULT_ANIMATION_SPEED,CLUTTER_LINEAR);
+  // this->midLayer->setAlpha(0);
+  // this->midLayer->restoreEasing();
+  // this->baseImage->setEasing(0.0,DEFAULT_ANIMATION_SPEED,CLUTTER_LINEAR);
+  // this->baseImage->setScale(1.1,1.1);
+  // this->baseImage->restoreEasing();
 }
 
 void CategoryCard::touchEnded(ClutterEvent* event) {
-  this->midLayer->setEasing(0.0,DEFAULT_ANIMATION_SPEED,CLUTTER_LINEAR);
-  this->midLayer->setAlpha(OVERLAY_ALPHA);
-  this->midLayer->restoreEasing();
-  this->baseImage->setEasing(0.0,DEFAULT_ANIMATION_SPEED,CLUTTER_LINEAR);
-  this->baseImage->setScale(1.0,1.0);
-  this->baseImage->restoreEasing();
+  // buildCategoryBrandPage();
+  // this->midLayer->setEasing(0.0,DEFAULT_ANIMATION_SPEED,CLUTTER_LINEAR);
+  // this->midLayer->setAlpha(OVERLAY_ALPHA);
+  // this->midLayer->restoreEasing();
+  // this->baseImage->setEasing(0.0,DEFAULT_ANIMATION_SPEED,CLUTTER_LINEAR);
+  // this->baseImage->setScale(1.0,1.0);
+  // this->baseImage->restoreEasing();
   this->delegate->didTapBigButton(this);
 }
 

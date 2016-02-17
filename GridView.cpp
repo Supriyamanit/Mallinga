@@ -48,6 +48,7 @@ GridView::GridView(gint rows, gint columns) {
 		gridCards[i]->setSize(widthPerCell, heightPerCell);
 		gridCards[i]->setPosition(xPos, yPos);
 		containerView->addSubView(gridCards[i]);
+    gridCards[i]->setDelegate(this);
 	}
 	brightTransition(gridCards[0]->midLayer);  
 }
