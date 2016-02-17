@@ -5,6 +5,8 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>AppDelegate.h</itemPath>
+      <itemPath>BrandCard.h</itemPath>
+      <itemPath>BrandGridView.h</itemPath>
       <itemPath>CategoryCard.h</itemPath>
       <itemPath>GridView.h</itemPath>
       <itemPath>constants.h</itemPath>
@@ -17,6 +19,8 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>AppDelegate.cpp</itemPath>
+      <itemPath>BrandCard.cpp</itemPath>
+      <itemPath>BrandGridView.cpp</itemPath>
       <itemPath>CategoryCard.cpp</itemPath>
       <itemPath>GridView.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -78,6 +82,14 @@
       </item>
       <item path="AppDelegate.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="BrandCard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BrandCard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BrandGridView.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BrandGridView.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="CategoryCard.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CategoryCard.h" ex="false" tool="3" flavor2="0">
@@ -115,6 +127,14 @@
       <item path="AppDelegate.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="AppDelegate.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BrandCard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BrandCard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BrandGridView.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BrandGridView.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="CategoryCard.cpp" ex="false" tool="1" flavor2="0">
       </item>

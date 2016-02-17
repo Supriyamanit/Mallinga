@@ -1,4 +1,7 @@
-build/Debug/GNU-MacOSX/GridView.o: GridView.cpp GridView.h \
+build/Debug/GNU-MacOSX/BrandCard.o: BrandCard.cpp BrandCard.h \
+  ../UIKit/UIKit.h ../UIKit/UIApplication.h ../UIKit/UIHeaders.h \
+  /usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter.h \
+  /usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter-config.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/galloca.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/gtypes.h \
@@ -75,9 +78,6 @@ build/Debug/GNU-MacOSX/GridView.o: GridView.cpp GridView.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/deprecated/grel.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/deprecated/gthread.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/glib-autocleanups.h \
-  ../UIKit/UIKit.h ../UIKit/UIApplication.h ../UIKit/UIHeaders.h \
-  /usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter.h \
-  /usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter-config.h \
   /usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter-types.h \
   /usr/local/Cellar/cairo/1.14.6/include/cairo/cairo.h \
   /usr/local/Cellar/cairo/1.14.6/include/cairo/cairo-version.h \
@@ -586,10 +586,19 @@ build/Debug/GNU-MacOSX/GridView.o: GridView.cpp GridView.h \
   ../UIKit/UIBinLayout.h ../UIKit/UIFlowLayout.h ../UIKit/UIScrollView.h \
   ../UIKit/UIPageControl.h ../UIKit/UITapGestureRecognizer.h \
   ../UIKit/UIPanGestureRecognizer.h ../UIKit/UIVideoPlayer.h \
-  ../UIKit/UIPlayer.h ../UIKit/UIButton.h CategoryCard.h BrandGridView.h \
-  BrandCard.h constants.h
+  ../UIKit/UIPlayer.h ../UIKit/UIButton.h
 
-GridView.h:
+BrandCard.h:
+
+../UIKit/UIKit.h:
+
+../UIKit/UIApplication.h:
+
+../UIKit/UIHeaders.h:
+
+/usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter.h:
+
+/usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter-config.h:
 
 /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib.h:
 
@@ -742,16 +751,6 @@ GridView.h:
 /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/deprecated/gthread.h:
 
 /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/glib-autocleanups.h:
-
-../UIKit/UIKit.h:
-
-../UIKit/UIApplication.h:
-
-../UIKit/UIHeaders.h:
-
-/usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter.h:
-
-/usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter-config.h:
 
 /usr/local/Cellar/clutter/1.24.2/include/clutter-1.0/clutter/clutter-types.h:
 
@@ -1798,11 +1797,3 @@ GridView.h:
 ../UIKit/UIPlayer.h:
 
 ../UIKit/UIButton.h:
-
-CategoryCard.h:
-
-BrandGridView.h:
-
-BrandCard.h:
-
-constants.h:

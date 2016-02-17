@@ -36,6 +36,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/AppDelegate.o \
+	${OBJECTDIR}/BrandCard.o \
+	${OBJECTDIR}/BrandGridView.o \
 	${OBJECTDIR}/CategoryCard.o \
 	${OBJECTDIR}/GridView.o \
 	${OBJECTDIR}/main.o
@@ -71,6 +73,16 @@ ${OBJECTDIR}/AppDelegate.o: AppDelegate.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I../UIKit `pkg-config --cflags clutter-1.0` `pkg-config --cflags glib-2.0` `pkg-config --cflags clutter-gst-3.0` `pkg-config --cflags gdk-pixbuf-2.0` `pkg-config --cflags cairo` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AppDelegate.o AppDelegate.cpp
+
+${OBJECTDIR}/BrandCard.o: BrandCard.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../UIKit `pkg-config --cflags clutter-1.0` `pkg-config --cflags glib-2.0` `pkg-config --cflags clutter-gst-3.0` `pkg-config --cflags gdk-pixbuf-2.0` `pkg-config --cflags cairo` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/BrandCard.o BrandCard.cpp
+
+${OBJECTDIR}/BrandGridView.o: BrandGridView.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../UIKit `pkg-config --cflags clutter-1.0` `pkg-config --cflags glib-2.0` `pkg-config --cflags clutter-gst-3.0` `pkg-config --cflags gdk-pixbuf-2.0` `pkg-config --cflags cairo` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/BrandGridView.o BrandGridView.cpp
 
 ${OBJECTDIR}/CategoryCard.o: CategoryCard.cpp 
 	${MKDIR} -p ${OBJECTDIR}

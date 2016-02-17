@@ -1,4 +1,4 @@
-build/Debug/GNU-MacOSX/GridView.o: GridView.cpp GridView.h \
+build/Debug/GNU-MacOSX/BrandGridView.o: BrandGridView.cpp BrandGridView.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/galloca.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib/gtypes.h \
@@ -586,10 +586,9 @@ build/Debug/GNU-MacOSX/GridView.o: GridView.cpp GridView.h \
   ../UIKit/UIBinLayout.h ../UIKit/UIFlowLayout.h ../UIKit/UIScrollView.h \
   ../UIKit/UIPageControl.h ../UIKit/UITapGestureRecognizer.h \
   ../UIKit/UIPanGestureRecognizer.h ../UIKit/UIVideoPlayer.h \
-  ../UIKit/UIPlayer.h ../UIKit/UIButton.h CategoryCard.h BrandGridView.h \
-  BrandCard.h constants.h
+  ../UIKit/UIPlayer.h ../UIKit/UIButton.h BrandCard.h constants.h
 
-GridView.h:
+BrandGridView.h:
 
 /usr/local/Cellar/glib/2.46.2/include/glib-2.0/glib.h:
 
@@ -1798,10 +1797,6 @@ GridView.h:
 ../UIKit/UIPlayer.h:
 
 ../UIKit/UIButton.h:
-
-CategoryCard.h:
-
-BrandGridView.h:
 
 BrandCard.h:
 

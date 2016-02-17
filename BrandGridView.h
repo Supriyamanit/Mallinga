@@ -11,29 +11,28 @@
  * Created on 16 February, 2016, 12:38 PM
  */
 
-#ifndef GRIDVIEW_H
-#define GRIDVIEW_H
+#ifndef BRANDGRIDVIEW_H
+#define BRANDGRIDVIEW_H
 #include <glib.h>
 #include <UIKit.h>
-#include "CategoryCard.h"
+#include "BrandCard.h"
 
-class GridView : public UIView, public CategoryCardDelegate, public CATimelineProtocol {
+class BrandGridView : public UIView, public CATimelineProtocol {
 public:
 	UIView *containerView;
-    GridView(gint rows, gint columns);
-    GridView(const GridView& orig);
-    void didTapBigButton(UIView *view);
+    BrandGridView(gint rows, gint columns);
+    BrandGridView(const BrandGridView& orig);
     void transitionDidFinish(CATimeline *timeline);
     void didProgress(CATimeline *timeline,int msecs);
     void brightTransition(UIView *view);
     void dimTransition(UIView *view);
-    virtual ~GridView();
-    CategoryCard *gridCards[8];
-    gchar *bgImages[8];
-    gchar *titles[8];
+    virtual ~BrandGridView();
+    BrandCard *gridCards[100];
+    gchar *bgImages[25];
+    gchar *titles[25];
 private:
 
 };
 
-#endif /* GRIDVIEW_H */
+#endif /* BRANDGRIDVIEW_H */
 
