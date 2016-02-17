@@ -128,12 +128,12 @@ void BrandGridView::transitionDidFinish(CATimeline *timeline){
     actor->setData("transitionState", (char*)"off");
     dimTransition(actor);
     
-    gint random = rand() % 60;  
+    gint random = rand() % 25;  
     while(TRUE){
       if(g_strcmp0((char*)gridCards[random]->midLayer->getData("transitionState"), "on")){
         break;
       }
-      random = rand() % 60;  
+      random = rand() % 25;  
     }
     brightTransition(gridCards[random]->midLayer);
   }else if(!g_strcmp0((char*)timeline->getData("name"),"dimtransition")){
