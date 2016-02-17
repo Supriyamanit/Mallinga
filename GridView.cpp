@@ -60,16 +60,52 @@ GridView::~GridView() {
 }
 
 void GridView::didTapBigButton(UIView *view) {
+  
+  for(int i=0; i<8; i++){
+    gridCards[i]->midLayer->removeAllTransition();
+    gridCards[i]->midLayer->setData("transitionState", (char*)"off");
+  }
 	for(int i=0; i<8; i++){
-		gridCards[i]->midLayer->removeAllTransition();
+    
+    gfloat width = gridCards[i]->getWidth();
+    gfloat height = gridCards[i]->getHeight();
+    CATransition* scaleDownXTransition = new CATransition("scale-x");
+    scaleDownXTransition->setFromValue(G_TYPE_DOUBLE, 1.0);
+    scaleDownXTransition->setToValue(G_TYPE_DOUBLE, 0.25);
+    scaleDownXTransition->setDuration(250);
+    scaleDownXTransition->setRemoveOnComplete(TRUE);
+    
+    CATransition* scaleDownYTransition = new CATransition("scale-y");
+    scaleDownYTransition->setFromValue(G_TYPE_DOUBLE, 1.0);
+    scaleDownYTransition->setToValue(G_TYPE_DOUBLE, 0.25);
+    scaleDownYTransition->setDuration(250);
+    scaleDownYTransition->setRemoveOnComplete(TRUE);
+
+    CATransition* positionChangeTransition = new CATransition("x");
+    positionChangeTransition->setFromValue(G_TYPE_INT, gridCards[i]->getPosition().x);
+    positionChangeTransition->setToValue(G_TYPE_INT, 10);
+    positionChangeTransition->setDuration(250);
+    positionChangeTransition->setRemoveOnComplete(TRUE);
+
+    CATransition* positionYChangeTransition = new CATransition("y");
+    positionYChangeTransition->setFromValue(G_TYPE_INT, gridCards[i]->getPosition().y);
+    positionYChangeTransition->setToValue(G_TYPE_INT, (SCREEN_HEIGHT - 20)/8*i +10);
+    positionYChangeTransition->setDuration(250);
+    positionYChangeTransition->setRemoveOnComplete(TRUE);
+    
+    gridCards[i]->addTransition(scaleDownXTransition, "scale-down-x");
+    gridCards[i]->addTransition(scaleDownYTransition, "scale-down-y");
+    gridCards[i]->addTransition(positionChangeTransition, "move-x");
+    gridCards[i]->addTransition(positionYChangeTransition, "move-y");
 	}
 }
+
 
 void GridView::brightTransition(UIView* layer){
   CATransition* rotateTransition = new CATransition("opacity");
   rotateTransition->setFromValue(G_TYPE_INT, layer->getOpacity());
   rotateTransition->setToValue(G_TYPE_INT, 0);
-  rotateTransition->setDuration(3000);
+  rotateTransition->setDuration(100);
   rotateTransition->setData("actor", (UIView*)layer);
 
   layer->setData("transitionState", (char*)"on");
@@ -83,7 +119,7 @@ void GridView::dimTransition(UIView* layer){
   CATransition* rotateTransition = new CATransition("opacity");
   rotateTransition->setFromValue(G_TYPE_INT, layer->getOpacity());
   rotateTransition->setToValue(G_TYPE_INT, 155);
-  rotateTransition->setDuration(3000);
+  rotateTransition->setDuration(100);
   layer->setData("transitionState", (char*)"on");
   rotateTransition->setData("actor", (UIView*)layer);
   rotateTransition->setData("name", (char*)"dimtransition");
