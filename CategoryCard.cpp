@@ -78,3 +78,7 @@ void CategoryCard::touchEnded(ClutterEvent* event) {
 void CategoryCard::setDelegate(CategoryCardDelegate *delegate) {
     this->delegate = delegate;
 }
+
+void CategoryCard::layoutSubviews(){
+  this->baseImage->setSize(this->getSize());
+}

@@ -32,6 +32,7 @@ public:
     void setDelegate(CategoryCardDelegate *delegate);
     CategoryCardDelegate *delegate;
     UIView *midLayer;
+    void layoutSubviews() override;
     virtual ~CategoryCard();
 private:
     UIImageView *baseImage;
