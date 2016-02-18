@@ -37,7 +37,7 @@ GridView::GridView(gint rows, gint columns) {
   titles[5] = "Toys & Gifts";
   titles[6] = "Dining";
   titles[7] = "Entertainment";
-
+  
 	gfloat widthPerCell = (SCREEN_WIDTH - (columns + 1)*columnGap)/columns ;
 	gfloat heightPerCell = (SCREEN_HEIGHT - (rows + 1)*rowGap)/rows ;
 	containerView = new UIView();
@@ -47,6 +47,7 @@ GridView::GridView(gint rows, gint columns) {
 		gridCards[i] = new CategoryCard();
 		gridCards[i]->setupWith(bgImages[i], titles[i], widthPerCell, heightPerCell);
 		gridCards[i]->setSize(widthPerCell, heightPerCell);
+    gridCards[i]->setData("index", GINT_TO_POINTER(i));
 		gridCards[i]->setPosition(xPos, yPos);
 		containerView->addSubView(gridCards[i]);
     gridCards[i]->setDelegate(this);
@@ -68,27 +69,42 @@ void GridView::didTapBigButton(UIView *view) {
   }
 	
   for(int i=0; i<8; i++){
+
     
     gfloat width = gridCards[i]->getWidth();
     gfloat height = gridCards[i]->getHeight();
     gridCards[i]->setPivotPoint(0.0,0.0);
-    gridCards[i]->setEasing(0,10250,CLUTTER_LINEAR);
+    gridCards[i]->setEasing(0,1250,CLUTTER_LINEAR);
+    if(i == GPOINTER_TO_INT(view->getData("index"))){
+      gridCards[i]->midLayer->setEasing(0,1250,CLUTTER_LINEAR);
+      gridCards[i]->midLayer->setAlpha(0);  
+    }
     gridCards[i]->setScaleWithGravity(0.25,0.25,CLUTTER_GRAVITY_NORTH_WEST);
-    gridCards[i]->setPosition(10,(SCREEN_HEIGHT - 20)/8*i +10);
+    gridCards[i]->setPosition(50,(SCREEN_HEIGHT - 20)/8*i +10);
 	}
 
-  BrandGridView *brandGrid = new BrandGridView(4,5);
-  
+  BrandGridView *brandGrid = buildBrandGrid(GPOINTER_TO_INT(view->getData("index")));
   containerView->addSubView(brandGrid->containerView);
+  brandGrid->containerView->setPosition(SCREEN_WIDTH,0);
+  brandGrid->containerView->setAlpha(0);
+  brandGrid->containerView->setEasing(0,1250,CLUTTER_LINEAR);
+  brandGrid->containerView->setAlpha(255);
   brandGrid->containerView->setPosition(200,0);
 }
 
+BrandGridView* GridView::buildBrandGrid(int i){
+  switch(i){
+    case 0: 
+      return new BrandGridView(4,5);
+      break;
+  }
+}
 
 void GridView::brightTransition(UIView* layer){
   CATransition* rotateTransition = new CATransition("opacity");
   rotateTransition->setFromValue(G_TYPE_INT, layer->getOpacity());
   rotateTransition->setToValue(G_TYPE_INT, 0);
-  rotateTransition->setDuration(100);
+  rotateTransition->setDuration(3000);
   rotateTransition->setData("actor", (UIView*)layer);
 
   layer->setData("transitionState", (char*)"on");
@@ -102,7 +118,7 @@ void GridView::dimTransition(UIView* layer){
   CATransition* rotateTransition = new CATransition("opacity");
   rotateTransition->setFromValue(G_TYPE_INT, layer->getOpacity());
   rotateTransition->setToValue(G_TYPE_INT, 155);
-  rotateTransition->setDuration(100);
+  rotateTransition->setDuration(3000);
   layer->setData("transitionState", (char*)"on");
   rotateTransition->setData("actor", (UIView*)layer);
   rotateTransition->setData("name", (char*)"dimtransition");

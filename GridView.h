@@ -16,12 +16,14 @@
 #include <glib.h>
 #include <UIKit.h>
 #include "CategoryCard.h"
+ #include "BrandGridView.h"
 
 class GridView : public UIView, public CategoryCardDelegate, public CATimelineProtocol {
 public:
 	UIView *containerView;
     GridView(gint rows, gint columns);
     GridView(const GridView& orig);
+    BrandGridView* buildBrandGrid(int i);
     void didTapBigButton(UIView *view);
     void transitionDidFinish(CATimeline *timeline);
     void didProgress(CATimeline *timeline,int msecs);

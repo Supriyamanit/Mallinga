@@ -19,6 +19,7 @@
 
 class BrandGridView : public UIView, public CATimelineProtocol {
 public:
+
 	UIView *containerView;
     BrandGridView(gint rows, gint columns);
     BrandGridView(const BrandGridView& orig);
@@ -28,8 +29,8 @@ public:
     void dimTransition(UIView *view);
     virtual ~BrandGridView();
     BrandCard *gridCards[100];
-    gchar *bgImages[25];
-    gchar *titles[25];
+    gchar *bgImages[8][20];
+    gchar *titles[8][20];
 private:
 
 };

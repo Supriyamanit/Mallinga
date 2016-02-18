@@ -23,10 +23,11 @@ public:
 
 class BrandCard : public UIView {
 public:
+
     BrandCard();
     BrandCard(const BrandCard& orig);
     
-    void setupWith(char *imageName, char *title, gfloat width, gfloat height);
+    void setupWith(char *imageName, gfloat width, gfloat height);
     void touchBegan(ClutterEvent* event);
     void touchEnded(ClutterEvent* event);
     void setDelegate(BrandCardDelegate *delegate);

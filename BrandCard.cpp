@@ -25,7 +25,7 @@ BrandCard::BrandCard(const BrandCard& orig) {
 BrandCard::~BrandCard() {
 }
 
-void BrandCard::setupWith(char *imageName, char *title, gfloat width, gfloat height){
+void BrandCard::setupWith(char *imageName, gfloat width, gfloat height){
 	this->setSize(width,height);
   
   UIImage *img = UIImage::imageNamed(imageName);
@@ -41,15 +41,6 @@ void BrandCard::setupWith(char *imageName, char *title, gfloat width, gfloat hei
   this->midLayer->setAlpha(OVERLAY_ALPHA);
   this->addSubView(this->midLayer);
   
-  this->lblTitle = new UILabel();
-  this->lblTitle->setFontWithSize("DIN Condensed,12");
-  this->lblTitle->setTextColor(CLUTTER_COLOR_White);
-  this->lblTitle->setTextAlignment(PANGO_ALIGN_CENTER);
-  this->lblTitle->setText(title);
-  this->lblTitle->setLineWrap(TRUE);
-  this->lblTitle->setPosition(10, 10);
-
-  this->addSubView(this->lblTitle);
   this->setClip(0,0,this->getWidth(),this->getHeight());
 }
 
