@@ -77,7 +77,7 @@ void GridView::didTapBigButton(UIView *view) {
     gridCards[i]->setPosition(10,(SCREEN_HEIGHT - 20)/8*i +10);
 	}
 
-  BrandGridView *brandGrid = new BrandGridView(5,5);
+  BrandGridView *brandGrid = new BrandGridView(4,5);
   
   containerView->addSubView(brandGrid->containerView);
   brandGrid->containerView->setPosition(200,0);
