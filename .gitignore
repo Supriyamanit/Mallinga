@@ -1,0 +1,14 @@
+
+/nbproject/private
+
+*.d
+
+build/Debug/GNU-MacOSX/main.o
+
+dist/Debug/GNU-MacOSX/pizza
+
+.dep.inc
+
+*.o
+/build/
+.DS_Store
