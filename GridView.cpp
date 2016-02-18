@@ -71,34 +71,10 @@ void GridView::didTapBigButton(UIView *view) {
     
     gfloat width = gridCards[i]->getWidth();
     gfloat height = gridCards[i]->getHeight();
-    CATransition* scaleDownXTransition = new CATransition("scale-x");
-    scaleDownXTransition->setFromValue(G_TYPE_DOUBLE, 1.0);
-    scaleDownXTransition->setToValue(G_TYPE_DOUBLE, 0.25);
-    scaleDownXTransition->setDuration(250);
-    scaleDownXTransition->setRemoveOnComplete(TRUE);
-    
-    CATransition* scaleDownYTransition = new CATransition("scale-y");
-    scaleDownYTransition->setFromValue(G_TYPE_DOUBLE, 1.0);
-    scaleDownYTransition->setToValue(G_TYPE_DOUBLE, 0.25);
-    scaleDownYTransition->setDuration(250);
-    scaleDownYTransition->setRemoveOnComplete(TRUE);
-
-    CATransition* positionChangeTransition = new CATransition("x");
-    positionChangeTransition->setFromValue(G_TYPE_INT, gridCards[i]->getPosition().x);
-    positionChangeTransition->setToValue(G_TYPE_INT, 10);
-    positionChangeTransition->setDuration(250);
-    positionChangeTransition->setRemoveOnComplete(TRUE);
-
-    CATransition* positionYChangeTransition = new CATransition("y");
-    positionYChangeTransition->setFromValue(G_TYPE_INT, gridCards[i]->getPosition().y);
-    positionYChangeTransition->setToValue(G_TYPE_INT, (SCREEN_HEIGHT - 20)/8*i +10);
-    positionYChangeTransition->setDuration(250);
-    positionYChangeTransition->setRemoveOnComplete(TRUE);
-    
-    gridCards[i]->addTransition(scaleDownXTransition, "scale-down-x");
-    gridCards[i]->addTransition(scaleDownYTransition, "scale-down-y");
-    gridCards[i]->addTransition(positionChangeTransition, "move-x");
-    gridCards[i]->addTransition(positionYChangeTransition, "move-y");
+    gridCards[i]->setPivotPoint(0.0,0.0);
+    gridCards[i]->setEasing(0,10250,CLUTTER_LINEAR);
+    gridCards[i]->setScaleWithGravity(0.25,0.25,CLUTTER_GRAVITY_NORTH_WEST);
+    gridCards[i]->setPosition(10,(SCREEN_HEIGHT - 20)/8*i +10);
 	}
 
   BrandGridView *brandGrid = new BrandGridView(5,5);
