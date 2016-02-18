@@ -105,10 +105,10 @@ void GridView::didTapBigButton(UIView *view) {
     gridCards[i]->addTransition(positionYChangeTransition, "move-y");
 	}
 
-  // BrandGridView *brandGrid = new BrandGridView(4,5);
+  BrandGridView *brandGrid = new BrandGridView(4,5);
   
-  // containerView->addSubView(brandGrid->containerView);
-  // brandGrid->containerView->setPosition(200,0);
+  containerView->addSubView(brandGrid->containerView);
+  brandGrid->containerView->setPosition(200,0);
 }
 
 
