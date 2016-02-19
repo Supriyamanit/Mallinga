@@ -34,7 +34,7 @@ CategoryView::CategoryView(gint rows, gint columns) {
 	bgImages[12] = "images/brands/apparel/chemistry.jpg";
 	bgImages[13] = "images/brands/apparel/fab.jpg";
 	bgImages[14] = "images/brands/apparel/levis.png";
-	char* logoPath = "images/brands/apparel/levis.png";
+	char* logoPath = "images/logo.png";
 
   
   titles[0] = "Apparel";
@@ -62,7 +62,7 @@ CategoryView::CategoryView(gint rows, gint columns) {
   logoView = UIImageView::initWithImage(img);
   logoView->setSize(100,100);
   logoView->setContentGravity(CLUTTER_CONTENT_GRAVITY_RESIZE_FILL);
-  logoView->setPosition((SCREEN_WIDTH - logoView->getWidth())/2, 20);
+  logoView->setPosition((SCREEN_WIDTH - logoView->getWidth())/2, 35);
   containerView->addSubView(logoView);
 
 	
