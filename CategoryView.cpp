@@ -34,6 +34,7 @@ CategoryView::CategoryView(gint rows, gint columns) {
 	bgImages[12] = "images/brands/apparel/chemistry.jpg";
 	bgImages[13] = "images/brands/apparel/fab.jpg";
 	bgImages[14] = "images/brands/apparel/levis.png";
+	char* logoPath = "images/brands/apparel/levis.png";
 
   
   titles[0] = "Apparel";
@@ -55,16 +56,34 @@ CategoryView::CategoryView(gint rows, gint columns) {
 	gfloat widthPerCell = 250 ;
 	gfloat heightPerCell = 250 ;
 	containerView = new UIView();
+
+	UIView* logoView = new UIView();
+	UIImage *img = UIImage::imageNamed(logoPath);
+  logoView = UIImageView::initWithImage(img);
+  logoView->setSize(100,100);
+  logoView->setContentGravity(CLUTTER_CONTENT_GRAVITY_RESIZE_FILL);
+  logoView->setPosition((SCREEN_WIDTH - logoView->getWidth())/2, 20);
+  containerView->addSubView(logoView);
+
+	
 	for(gint i=0; i< columns * rows; i++){
 		gfloat xPos = 280 + (i%columns)*(widthPerCell + columnGap) + columnGap;
 		gfloat yPos = 140 + (i/columns)*(heightPerCell + rowGap) + rowGap;
-		gridCards[i] = new CategoryCard();
-		gridCards[i]->setupWith(bgImages[i], titles[i], widthPerCell, heightPerCell);
-		gridCards[i]->setSize(widthPerCell, heightPerCell);
-    gridCards[i]->setData("index", GINT_TO_POINTER(i));
-		gridCards[i]->setPosition(xPos, yPos);
-		containerView->addSubView(gridCards[i]);
-    gridCards[i]->setDelegate(this);
+		if(i==7){
+			UIView* promoView = new UIView();
+			promoView->setBackgroundColor(CLUTTER_COLOR_Red);
+			promoView->setPosition(xPos, yPos);
+			promoView->setSize(widthPerCell, heightPerCell);
+			containerView->addSubView(promoView);
+		}else{
+			gridCards[i] = new CategoryCard();
+			gridCards[i]->setupWith(bgImages[i], titles[i], widthPerCell, heightPerCell);
+			gridCards[i]->setSize(widthPerCell, heightPerCell);
+	    gridCards[i]->setData("index", GINT_TO_POINTER(i));
+			gridCards[i]->setPosition(xPos, yPos);
+			containerView->addSubView(gridCards[i]);
+	    gridCards[i]->setDelegate(this);
+		}
 	}
 }
 
