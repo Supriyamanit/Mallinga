@@ -8,6 +8,7 @@
       <itemPath>BrandCard.h</itemPath>
       <itemPath>BrandGridView.h</itemPath>
       <itemPath>CategoryCard.h</itemPath>
+      <itemPath>CategoryView.h</itemPath>
       <itemPath>GridView.h</itemPath>
       <itemPath>constants.h</itemPath>
     </logicalFolder>
@@ -22,6 +23,7 @@
       <itemPath>BrandCard.cpp</itemPath>
       <itemPath>BrandGridView.cpp</itemPath>
       <itemPath>CategoryCard.cpp</itemPath>
+      <itemPath>CategoryView.cpp</itemPath>
       <itemPath>GridView.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -94,6 +96,10 @@
       </item>
       <item path="CategoryCard.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="CategoryView.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CategoryView.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="GridView.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GridView.h" ex="false" tool="3" flavor2="0">
@@ -139,6 +145,10 @@
       <item path="CategoryCard.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CategoryCard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CategoryView.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CategoryView.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GridView.cpp" ex="false" tool="1" flavor2="0">
       </item>

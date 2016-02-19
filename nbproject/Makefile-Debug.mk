@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/BrandCard.o \
 	${OBJECTDIR}/BrandGridView.o \
 	${OBJECTDIR}/CategoryCard.o \
+	${OBJECTDIR}/CategoryView.o \
 	${OBJECTDIR}/GridView.o \
 	${OBJECTDIR}/main.o
 
@@ -88,6 +89,11 @@ ${OBJECTDIR}/CategoryCard.o: CategoryCard.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I../UIKit `pkg-config --cflags clutter-1.0` `pkg-config --cflags glib-2.0` `pkg-config --cflags clutter-gst-3.0` `pkg-config --cflags gdk-pixbuf-2.0` `pkg-config --cflags cairo` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CategoryCard.o CategoryCard.cpp
+
+${OBJECTDIR}/CategoryView.o: CategoryView.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../UIKit `pkg-config --cflags clutter-1.0` `pkg-config --cflags glib-2.0` `pkg-config --cflags clutter-gst-3.0` `pkg-config --cflags gdk-pixbuf-2.0` `pkg-config --cflags cairo` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CategoryView.o CategoryView.cpp
 
 ${OBJECTDIR}/GridView.o: GridView.cpp 
 	${MKDIR} -p ${OBJECTDIR}

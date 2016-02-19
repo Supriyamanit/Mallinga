@@ -12,8 +12,8 @@
  */
 
 #include "AppDelegate.h"
-#include "GridView.h"
-static GridView *homeGrid;
+#include "CategoryView.h"
+static CategoryView *categoryGrid;
 UIView *globalSuperView;
 
 AppDelegate::AppDelegate() {
@@ -26,10 +26,11 @@ AppDelegate::~AppDelegate() {
 }
 
 void AppDelegate::didLaunchApplicationWithOption(int argc, char** argv, UIApplication* application) {
-  homeGrid = new GridView( 2, 4);
+  // categoryGrid = new GridView( 2, 4);
+  categoryGrid = new CategoryView(3,5);
   globalSuperView = application->superView;
   globalSuperView->setBackgroundColor(CLUTTER_COLOR_Black);
-  globalSuperView->addSubView(homeGrid->containerView);
+  globalSuperView->addSubView(categoryGrid->containerView);
 }
 
 CGSize AppDelegate::resizeScreen() {

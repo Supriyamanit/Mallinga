@@ -12,7 +12,7 @@
  */
 
 #include "CategoryCard.h"
-#define OVERLAY_ALPHA 150
+#define OVERLAY_ALPHA 0
 #define DEFAULT_ANIMATION_SPEED 200
 
 CategoryCard::CategoryCard() {
@@ -35,11 +35,11 @@ void CategoryCard::setupWith(char *imageName, char *title, gfloat width, gfloat 
   this->baseImage->setContentGravity(CLUTTER_CONTENT_GRAVITY_RESIZE_FILL);
   this->addSubView(this->baseImage);
   
-  this->midLayer = new UIView();
-  this->midLayer->setBackgroundColor(CLUTTER_COLOR_Black);
-  this->midLayer->setSize(this->getWidth(),this->getHeight());
-  this->midLayer->setAlpha(OVERLAY_ALPHA);
-  this->addSubView(this->midLayer);
+  // this->midLayer = new UIView();
+  // this->midLayer->setBackgroundColor(CLUTTER_COLOR_Black);
+  // this->midLayer->setSize(this->getWidth(),this->getHeight());
+  // this->midLayer->setAlpha(OVERLAY_ALPHA);
+  // this->addSubView(this->midLayer);
   
   this->lblTitle = new UILabel();
   this->lblTitle->setFontWithSize("DIN Condensed,24");

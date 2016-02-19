@@ -586,7 +586,7 @@ build/Debug/GNU-MacOSX/AppDelegate.o: AppDelegate.cpp AppDelegate.h \
   ../UIKit/UIBinLayout.h ../UIKit/UIFlowLayout.h ../UIKit/UIScrollView.h \
   ../UIKit/UIPageControl.h ../UIKit/UITapGestureRecognizer.h \
   ../UIKit/UIPanGestureRecognizer.h ../UIKit/UIVideoPlayer.h \
-  ../UIKit/UIPlayer.h ../UIKit/UIButton.h GridView.h CategoryCard.h \
+  ../UIKit/UIPlayer.h ../UIKit/UIButton.h CategoryView.h CategoryCard.h \
   BrandGridView.h BrandCard.h
 
 AppDelegate.h:
@@ -1799,7 +1799,7 @@ AppDelegate.h:
 
 ../UIKit/UIButton.h:
 
-GridView.h:
+CategoryView.h:
 
 CategoryCard.h:
 
