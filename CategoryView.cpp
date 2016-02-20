@@ -19,15 +19,15 @@ static gfloat columnGap = 25.0;
 static gfloat rowGap = 25.0;
 
 CategoryView::CategoryView(gint rows, gint columns) {
-	bgImages[0] = "images/apparel/1.jpg";
-  bgImages[1] = "images/accesories-and-footwear/1.jpg";
-  bgImages[2] = "images/health-and-beauty/1.jpg";
-  bgImages[3] = "images/home-and-lifestyle/1.jpg";
-  bgImages[4] = "images/electronics/1.jpg";
-  bgImages[5] = "images/toys-and-gifts/1.jpg";
-	bgImages[6] = "images/dining/1.jpg";
-  bgImages[7] = "images/entertaitment/1.jpg";
-  bgImages[8] = "images/brands/apparel/allen.jpg";
+	bgImages[0] = "images/Icons/clothing.jpg";
+  bgImages[1] = "images/Icons/dining.jpg";
+  bgImages[2] = "images/Icons/electronics.jpg";
+  bgImages[3] = "images/Icons/fitness.jpg";
+  bgImages[4] = "images/Icons/footwear.jpg";
+  bgImages[5] = "images/Icons/gifts.jpg";
+	bgImages[6] = "images/Icons/jewellery.jpg";
+  bgImages[7] = "images/Icons/spa.jpg";
+  bgImages[8] = "images/Icons/watch.jpg";
 	bgImages[9] = "images/brands/apparel/zara.png";
 	bgImages[10] = "images/brands/apparel/arrow.jpg";
 	bgImages[11] = "images/brands/apparel/biba.jpg";
@@ -35,23 +35,6 @@ CategoryView::CategoryView(gint rows, gint columns) {
 	bgImages[13] = "images/brands/apparel/fab.jpg";
 	bgImages[14] = "images/brands/apparel/levis.png";
 	char* logoPath = "images/logo.png";
-
-  
-  titles[0] = "Apparel";
-  titles[1] = "Accessories & Footwear";
-  titles[2] = "Health & Beauty";
-  titles[3] = "Home & Lifestyle";
-  titles[4] = "Electronics";
-  titles[5] = "Toys & Gifts";
-  titles[6] = "Dining";
-  titles[7] = "Entertainment";
-  titles[8] = "Apparel";
-  titles[9] = "Accessories & Footwear";
-  titles[10] = "Health & Beauty";
-  titles[11] = "Home & Lifestyle";
-  titles[12] = "Electronics";
-  titles[13] = "Toys & Gifts";
-  titles[14] = "Dining";
 
 	gfloat widthPerCell = 250 ;
 	gfloat heightPerCell = 250 ;
@@ -69,7 +52,7 @@ CategoryView::CategoryView(gint rows, gint columns) {
 	for(gint i=0; i< columns * rows; i++){
 		gfloat xPos = 280 + (i%columns)*(widthPerCell + columnGap) + columnGap;
 		gfloat yPos = 140 + (i/columns)*(heightPerCell + rowGap) + rowGap;
-		if(i==7){
+		if(FALSE){
 			UIView* promoView = new UIView();
 			promoView->setBackgroundColor(CLUTTER_COLOR_Red);
 			promoView->setPosition(xPos, yPos);
@@ -77,7 +60,7 @@ CategoryView::CategoryView(gint rows, gint columns) {
 			containerView->addSubView(promoView);
 		}else{
 			gridCards[i] = new CategoryCard();
-			gridCards[i]->setupWith(bgImages[i], titles[i], widthPerCell, heightPerCell);
+			gridCards[i]->setupWith(bgImages[i], widthPerCell, heightPerCell);
 			gridCards[i]->setSize(widthPerCell, heightPerCell);
 	    gridCards[i]->setData("index", GINT_TO_POINTER(i));
 			gridCards[i]->setPosition(xPos, yPos);
