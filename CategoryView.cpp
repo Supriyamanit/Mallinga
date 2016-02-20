@@ -30,7 +30,7 @@ CategoryView::CategoryView(gint rows, gint columns) {
   bgImages[8] = "images/Icons/watch.jpg";
 	bgImages[9] = "images/Icons/spa.jpg";
 	bgImages[10] = "images/Icons/offer2.png";
-	bgImages[11] = "images/brands/apparel/biba.jpg";
+	bgImages[11] = "images/Icons/lifestyle.jpg";
 	bgImages[12] = "images/brands/apparel/chemistry.jpg";
 	bgImages[13] = "images/brands/apparel/fab.jpg";
 	bgImages[14] = "images/brands/apparel/levis.png";
