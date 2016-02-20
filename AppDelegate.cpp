@@ -34,16 +34,16 @@ void AppDelegate::didLaunchApplicationWithOption(int argc, char** argv, UIApplic
 
   globalSuperView = application->superView;
   UIView *backgroundView = new UIView();
-  UIImage *img = UIImage::imageNamed("images/background.jpg");
+  UIImage *img = UIImage::imageNamed("images/background2.jpeg");
   backgroundView = UIImageView::initWithImage(img);
   backgroundView->setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
   backgroundView->setContentGravity(CLUTTER_CONTENT_GRAVITY_RESIZE_FILL);
   globalSuperView->addSubView(backgroundView);
 	
-	// launchScreen = new LaunchScreen();
-	// globalSuperView->addSubView(launchScreen->containerView);
-	categoryGrid = new CategoryView(3,5);
-  globalSuperView->addSubView(categoryGrid->containerView);
+	launchScreen = new LaunchScreen();
+	globalSuperView->addSubView(launchScreen->containerView);
+	// categoryGrid = new CategoryView(3,5);
+  // globalSuperView->addSubView(categoryGrid->containerView);
 }
 
 CGSize AppDelegate::resizeScreen() {
