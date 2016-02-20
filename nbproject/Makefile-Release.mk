@@ -43,6 +43,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/GridView.o \
 	${OBJECTDIR}/ShopCard.o \
 	${OBJECTDIR}/ShopCollectionView.o \
+	${OBJECTDIR}/LaunchScreen.o \
 	${OBJECTDIR}/main.o
 
 
@@ -100,6 +101,7 @@ ${OBJECTDIR}/GridView.o: GridView.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/GridView.o GridView.cpp
 
+
 ${OBJECTDIR}/ShopCard.o: ShopCard.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -109,6 +111,12 @@ ${OBJECTDIR}/ShopCollectionView.o: ShopCollectionView.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ShopCollectionView.o ShopCollectionView.cpp
+
+${OBJECTDIR}/LaunchScreen.o: LaunchScreen.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LaunchScreen.o LaunchScreen.cpp
+
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

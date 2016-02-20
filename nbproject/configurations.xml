@@ -115,6 +115,9 @@
       <item path="ShopCollectionView.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ShopCollectionView.h" ex="false" tool="3" flavor2="0">
+      <item path="LaunchScreen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="LaunchScreen.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="constants.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -173,6 +176,9 @@
       <item path="ShopCollectionView.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ShopCollectionView.h" ex="false" tool="3" flavor2="0">
+      <item path="LaunchScreen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="LaunchScreen.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="constants.h" ex="false" tool="3" flavor2="0">
       </item>

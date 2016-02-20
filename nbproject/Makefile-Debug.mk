@@ -43,6 +43,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/GridView.o \
 	${OBJECTDIR}/ShopCard.o \
 	${OBJECTDIR}/ShopCollectionView.o \
+	${OBJECTDIR}/LaunchScreen.o \
 	${OBJECTDIR}/main.o
 
 
@@ -111,6 +112,10 @@ ${OBJECTDIR}/ShopCollectionView.o: ShopCollectionView.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I../UIKit `pkg-config --cflags clutter-1.0` `pkg-config --cflags glib-2.0` `pkg-config --cflags clutter-gst-3.0` `pkg-config --cflags gdk-pixbuf-2.0` `pkg-config --cflags cairo` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ShopCollectionView.o ShopCollectionView.cpp
+${OBJECTDIR}/LaunchScreen.o: LaunchScreen.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../UIKit `pkg-config --cflags clutter-1.0` `pkg-config --cflags glib-2.0` `pkg-config --cflags clutter-gst-3.0` `pkg-config --cflags gdk-pixbuf-2.0` `pkg-config --cflags cairo` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LaunchScreen.o LaunchScreen.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
