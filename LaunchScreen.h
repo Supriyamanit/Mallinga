@@ -15,15 +15,19 @@
 #define LAUNCHSCREEN_H
 #include <glib.h>
 #include <UIKit.h>
+#include "constants.h" 
 
 class LaunchScreen {
 public:
     LaunchScreen();
     LaunchScreen(const LaunchScreen& orig);
     virtual ~LaunchScreen();
+    void buildStartButton();
+    void buildLogo();
     UIView* containerView;
 private:
 	UIView* touchMe;
+	UIView* mallLogo;
 
 };
 

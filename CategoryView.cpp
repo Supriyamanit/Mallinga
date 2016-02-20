@@ -19,21 +19,23 @@ static gfloat columnGap = 25.0;
 static gfloat rowGap = 25.0;
 
 CategoryView::CategoryView(gint rows, gint columns) {
-	bgImages[0] = "images/Icons/clothing.jpg";
+	
+	bgImages[0] = "images/Icons/offer1.png";
   bgImages[1] = "images/Icons/dining.jpg";
-  bgImages[2] = "images/Icons/electronics.jpg";
+  bgImages[2] = "images/Icons/clothing.jpg";
   bgImages[3] = "images/Icons/lifestyle.jpg";
   bgImages[4] = "images/Icons/footwear.jpg";
   bgImages[5] = "images/Icons/gifts.jpg";
 	bgImages[6] = "images/Icons/jewellery.jpg";
-  bgImages[7] = "images/Icons/offer1.png";
-  bgImages[8] = "images/Icons/watch.jpg";
+  bgImages[7] = "images/Icons/offer3.png";
+  bgImages[8] = "images/Icons/electronics.jpg";
 	bgImages[9] = "images/Icons/spa.jpg";
-	bgImages[10] = "images/Icons/offer2.png";
+	bgImages[10] = "images/brands/apparel/levis.png";
 	bgImages[11] = "images/Icons/lifestyle.jpg";
-	bgImages[12] = "images/Icons/offer3.png";
+	bgImages[12] = "images/Icons/watch.jpg";
 	bgImages[13] = "images/Icons/lingerie.jpg";
-	bgImages[14] = "images/brands/apparel/levis.png";
+	bgImages[14] = "images/Icons/offer2.png";
+
 	char* logoPath = "images/logo.png";
 
 	gfloat widthPerCell = 250 ;
