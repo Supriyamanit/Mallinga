@@ -13,7 +13,7 @@
 
 #include "ShopCard.h"
 #include <UIKit.h>
-#include <stdlib.h> 
+#include <stdlib.h>
 
 static void on_paint_cb(ClutterActor *actor) {
     gint hand_width, hand_height;
@@ -21,7 +21,7 @@ static void on_paint_cb(ClutterActor *actor) {
     hand_height = clutter_actor_get_height(actor);
     cogl_path_round_rectangle(1,1,hand_width-2,hand_height-2,10,3);
     CoglColor *color = cogl_color_new();
-    cogl_color_init_from_4f(color,1,1,1,1);
+    cogl_color_init_from_4f(color,0.95,0.95,0.95,1);
     cogl_set_source_color(color);
     cogl_path_fill();
     cogl_path_round_rectangle(1,1,hand_width-2,hand_height-2,10,3);
@@ -34,8 +34,17 @@ static void on_post_paint_cb(void) {
 }
 
 ShopCard::ShopCard() {
-	g_signal_connect(containerView->view, "paint", G_CALLBACK(on_paint_cb), NULL);
+    containerView = new UIView();
+    g_signal_connect(containerView->view, "paint", G_CALLBACK(on_paint_cb), NULL);
     g_signal_connect_after(containerView->view, "paint", G_CALLBACK(on_post_paint_cb), NULL);
+    this->addSubView(containerView);
+
+    char imagePath[100];
+    sprintf(imagePath,"images/shops/shoe.png");
+    image = UIImageView::initWithImage(UIImage::imageNamed(imagePath));
+    image->setSize(550,1080*3/5);
+    containerView->addSubView(image);
+    image->setContentGravity(CLUTTER_CONTENT_GRAVITY_RESIZE_FILL);
 }
 
 ShopCard::ShopCard(const ShopCard& orig) {
@@ -44,3 +53,6 @@ ShopCard::ShopCard(const ShopCard& orig) {
 ShopCard::~ShopCard() {
 }
 
+void ShopCard::layoutSubviews(){
+    containerView->setSize(this->getSize());
+}

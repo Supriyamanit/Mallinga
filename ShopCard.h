@@ -16,13 +16,24 @@
 
 #include <UIKit.h>
 
+ typedef struct _ShopDetails{
+ 	const char *imagePath;
+ 	const char *title;
+ 	const char *description;
+ 	const char *openHours;
+ 	const char *phoneNumber;
+ }ShopDetails;
+
 class ShopCard: public UIView {
 public:
     ShopCard();
     ShopCard(const ShopCard& orig);
     virtual ~ShopCard();
+    void layoutSubviews() override;
 private:
-
+	UIView *containerView;
+	UIImageView *image;
+	UILabel *title,*desc,*phone,*addr,*opening;
 };
 
 #endif /* SHOPCARD_H */

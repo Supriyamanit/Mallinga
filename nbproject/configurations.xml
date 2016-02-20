@@ -10,6 +10,8 @@
       <itemPath>CategoryCard.h</itemPath>
       <itemPath>CategoryView.h</itemPath>
       <itemPath>GridView.h</itemPath>
+      <itemPath>ShopCard.h</itemPath>
+      <itemPath>ShopCollectionView.h</itemPath>
       <itemPath>constants.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -25,6 +27,8 @@
       <itemPath>CategoryCard.cpp</itemPath>
       <itemPath>CategoryView.cpp</itemPath>
       <itemPath>GridView.cpp</itemPath>
+      <itemPath>ShopCard.cpp</itemPath>
+      <itemPath>ShopCollectionView.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -104,6 +108,14 @@
       </item>
       <item path="GridView.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="ShopCard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ShopCard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ShopCollectionView.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ShopCollectionView.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="constants.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
@@ -153,6 +165,14 @@
       <item path="GridView.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GridView.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ShopCard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ShopCard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ShopCollectionView.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ShopCollectionView.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="constants.h" ex="false" tool="3" flavor2="0">
       </item>
