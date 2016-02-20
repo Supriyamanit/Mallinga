@@ -22,7 +22,7 @@ CategoryView::CategoryView(gint rows, gint columns) {
 	bgImages[0] = "images/Icons/clothing.jpg";
   bgImages[1] = "images/Icons/dining.jpg";
   bgImages[2] = "images/Icons/electronics.jpg";
-  bgImages[3] = "images/Icons/fitness.jpg";
+  bgImages[3] = "images/Icons/lifestyle.jpg";
   bgImages[4] = "images/Icons/footwear.jpg";
   bgImages[5] = "images/Icons/gifts.jpg";
 	bgImages[6] = "images/Icons/jewellery.jpg";
@@ -31,7 +31,7 @@ CategoryView::CategoryView(gint rows, gint columns) {
 	bgImages[9] = "images/Icons/spa.jpg";
 	bgImages[10] = "images/Icons/offer2.png";
 	bgImages[11] = "images/Icons/lifestyle.jpg";
-	bgImages[12] = "images/brands/apparel/chemistry.jpg";
+	bgImages[12] = "images/Icons/offer3.png";
 	bgImages[13] = "images/brands/apparel/fab.jpg";
 	bgImages[14] = "images/brands/apparel/levis.png";
 	char* logoPath = "images/logo.png";
