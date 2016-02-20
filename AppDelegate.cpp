@@ -13,6 +13,7 @@
 
 #include "AppDelegate.h"
 #include "CategoryView.h"
+#include "constants.h"
 static CategoryView *categoryGrid;
 UIView *globalSuperView;
 
@@ -29,6 +30,13 @@ void AppDelegate::didLaunchApplicationWithOption(int argc, char** argv, UIApplic
   // categoryGrid = new GridView( 2, 4);
   categoryGrid = new CategoryView(3,5);
   globalSuperView = application->superView;
+  UIView *backgroundView = new UIView();
+  UIImage *img = UIImage::imageNamed("images/background.jpg");
+  backgroundView = UIImageView::initWithImage(img);
+  backgroundView->setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+  backgroundView->setContentGravity(CLUTTER_CONTENT_GRAVITY_RESIZE_FILL);
+  globalSuperView->addSubView(backgroundView);
+
   globalSuperView->setBackgroundColor(CLUTTER_COLOR_Black);
   globalSuperView->addSubView(categoryGrid->containerView);
 }

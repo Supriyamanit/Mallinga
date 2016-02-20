@@ -25,7 +25,7 @@ CategoryCard::CategoryCard(const CategoryCard& orig) {
 CategoryCard::~CategoryCard() {
 }
 
-void CategoryCard::setupWith(char *imageName, char *title, gfloat width, gfloat height){
+void CategoryCard::setupWith(char *imageName,  gfloat width, gfloat height){
 	this->setSize(width,height);
   
   UIImage *img = UIImage::imageNamed(imageName);
@@ -34,22 +34,7 @@ void CategoryCard::setupWith(char *imageName, char *title, gfloat width, gfloat 
   this->baseImage->setSize(this->getWidth(),this->getHeight());
   this->baseImage->setContentGravity(CLUTTER_CONTENT_GRAVITY_RESIZE_FILL);
   this->addSubView(this->baseImage);
-  
-  // this->midLayer = new UIView();
-  // this->midLayer->setBackgroundColor(CLUTTER_COLOR_Black);
-  // this->midLayer->setSize(this->getWidth(),this->getHeight());
-  // this->midLayer->setAlpha(OVERLAY_ALPHA);
-  // this->addSubView(this->midLayer);
-  
-  this->lblTitle = new UILabel();
-  this->lblTitle->setFontWithSize("DIN Condensed,24");
-  this->lblTitle->setTextColor(CLUTTER_COLOR_White);
-  this->lblTitle->setTextAlignment(PANGO_ALIGN_CENTER);
-  this->lblTitle->setText(title);
-  this->lblTitle->setLineWrap(TRUE);
-  this->lblTitle->setPosition(10, 10);
 
-  this->addSubView(this->lblTitle);
   this->setClip(0,0,this->getWidth(),this->getHeight());
 }
 
