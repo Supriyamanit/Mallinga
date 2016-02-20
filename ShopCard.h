@@ -26,14 +26,14 @@
 
 class ShopCard: public UIView {
 public:
-    ShopCard();
+    ShopCard(ShopDetails *details);
     ShopCard(const ShopCard& orig);
     virtual ~ShopCard();
     void layoutSubviews() override;
 private:
 	UIView *containerView;
 	UIImageView *image;
-	UILabel *title,*desc,*phone,*addr,*opening;
+	UILabel *title,*description,*phoneNumber,*openHours;
 };
 
 #endif /* SHOPCARD_H */

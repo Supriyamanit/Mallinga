@@ -21,10 +21,16 @@ ShopCollectionView::ShopCollectionView() {
 	this->setSize(1920,1080);
 
 	for(int i=0;i<10;i++){
-		card[i] = new ShopCard();
+		ShopDetails *details = g_new0(ShopDetails,1);
+		details->imagePath = "images/shops/shoe.png";
+		details->title = "Metro Shoes";
+		details->description = "Metro Shoes is an online shoe store in India with popular shoe brands for men, women and kids. Buy branded footwear online at lowest.";
+		details->openHours = "11AM to 9PM";
+		details->phoneNumber = "044 6666 6666";
+		card[i] = new ShopCard(details);
 		this->addSubView(card[i]);
 		card[i]->setSize(550,1080);
-		card[i]->setBackgroundColor(CLUTTER_COLOR_Aluminium1);
+		card[i]->setBackgroundColor(CLUTTER_COLOR_Transparent);
 	}
 }
 

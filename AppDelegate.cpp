@@ -40,10 +40,26 @@ void AppDelegate::didLaunchApplicationWithOption(int argc, char** argv, UIApplic
   backgroundView->setContentGravity(CLUTTER_CONTENT_GRAVITY_RESIZE_FILL);
   globalSuperView->addSubView(backgroundView);
 	
-	launchScreen = new LaunchScreen();
-	globalSuperView->addSubView(launchScreen->containerView);
+
+
+	// launchScreen = new LaunchScreen();
+	// globalSuperView->addSubView(launchScreen->containerView);
+	// categoryGrid = new CategoryView(3,5);
+ //  globalSuperView->addSubView(categoryGrid->containerView);
+  ShopCollectionView *shopView = new ShopCollectionView();
+  globalSuperView->addSubView(shopView);
+
+	// launchScreen = new LaunchScreen();
+	// globalSuperView->addSubView(launchScreen->containerView);
 	// categoryGrid = new CategoryView(3,5);
   // globalSuperView->addSubView(categoryGrid->containerView);
+
+
+	// launchScreen = new LaunchScreen();
+	// globalSuperView->addSubView(launchScreen->containerView);
+	// categoryGrid = new CategoryView(3,5);
+  // globalSuperView->addSubView(categoryGrid->containerView);
+
 }
 
 CGSize AppDelegate::resizeScreen() {
