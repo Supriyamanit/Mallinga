@@ -12,3 +12,5 @@ dist/Debug/GNU-MacOSX/pizza
 *.o
 /build/
 .DS_Store
+
+dist/Debug/GNU-MacOSX/mallinga
