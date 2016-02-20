@@ -17,7 +17,7 @@
 #include <UIKit.h>
 #include "constants.h" 
 
-class LaunchScreen {
+class LaunchScreen: public UITapGestureProtocol {
 public:
     LaunchScreen();
     LaunchScreen(const LaunchScreen& orig);
@@ -25,6 +25,7 @@ public:
     void buildStartButton();
     void buildLogo();
     UIView* containerView;
+    void didTapViewWithEvent(ClutterTapAction *event, UIView *view);
 private:
 	UIView* touchMe;
 	UIView* mallLogo;

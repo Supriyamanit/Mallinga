@@ -12,6 +12,8 @@
  */
 
 #include "LaunchScreen.h"
+#include "CategoryView.h"
+#include "constants.h"
 
 LaunchScreen::LaunchScreen() {
 	containerView = new UIView();
@@ -36,8 +38,11 @@ void LaunchScreen::buildStartButton() {
   touchMe->setContentGravity(CLUTTER_CONTENT_GRAVITY_RESIZE_FILL);
   touchMe->setPosition((SCREEN_WIDTH - touchMe->getWidth())/2, (SCREEN_HEIGHT - touchMe->getHeight())/2);
   containerView->addSubView(touchMe);
+  touchMe->setUserInteractionEnabled(TRUE);
 
-
+  UITapGestureRecognizer *tap = new UITapGestureRecognizer();
+  touchMe->addGestureRecognizer(tap);
+  tap->setDelegate(this);
 
   CATransition* rippleAnimationX = new CATransition("scale-x");
 	rippleAnimationX->setFromValue(G_TYPE_DOUBLE, rippleLayer->getScaleX());
@@ -80,3 +85,9 @@ LaunchScreen::LaunchScreen(const LaunchScreen& orig) {
 LaunchScreen::~LaunchScreen() {
 }
 
+
+void LaunchScreen::didTapViewWithEvent(ClutterTapAction *event, UIView *view){
+	containerView->setAlpha(0);
+	CategoryView* categoryGrid = new CategoryView(3,5);
+	globalSuperView->addSubView(categoryGrid->containerView);
+}

@@ -15,6 +15,7 @@
 #include "BrandGridView.h"
 #include "constants.h"
 #include "CategoryCard.h"
+#include "ShopCollectionView.h"
 static gfloat columnGap = 25.0;
 static gfloat rowGap = 25.0;
 
@@ -44,7 +45,7 @@ CategoryView::CategoryView(gint rows, gint columns) {
 	UIView* logoView = new UIView();
 	UIImage *img = UIImage::imageNamed(logoPath);
   logoView = UIImageView::initWithImage(img);
-  logoView->setSize(100,100);
+  logoView->setSize(200,100);
   logoView->setContentGravity(CLUTTER_CONTENT_GRAVITY_RESIZE_FILL);
   logoView->setPosition((SCREEN_WIDTH - logoView->getWidth())/2, 35);
   containerView->addSubView(logoView);
@@ -78,7 +79,10 @@ CategoryView::~CategoryView() {
 }
 
 void CategoryView::didTapBigButton(UIView *view) {
-  g_print("hello and coms here");
+  g_print("hello and comes here");
+  ShopCollectionView* shopView = new ShopCollectionView();
+  containerView->setAlpha(0);
+  globalSuperView->addSubView(shopView);
  //  for(int i=0; i<8; i++){
  //    gridCards[i]->midLayer->removeAllTransition();
  //    gridCards[i]->midLayer->setData("transitionState", (char*)"off");
