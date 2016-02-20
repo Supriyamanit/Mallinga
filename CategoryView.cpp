@@ -26,10 +26,10 @@ CategoryView::CategoryView(gint rows, gint columns) {
   bgImages[4] = "images/Icons/footwear.jpg";
   bgImages[5] = "images/Icons/gifts.jpg";
 	bgImages[6] = "images/Icons/jewellery.jpg";
-  bgImages[7] = "images/Icons/spa.jpg";
+  bgImages[7] = "images/Icons/offer1.png";
   bgImages[8] = "images/Icons/watch.jpg";
-	bgImages[9] = "images/brands/apparel/zara.png";
-	bgImages[10] = "images/brands/apparel/arrow.jpg";
+	bgImages[9] = "images/Icons/spa.jpg";
+	bgImages[10] = "images/Icons/offer2.png";
 	bgImages[11] = "images/brands/apparel/biba.jpg";
 	bgImages[12] = "images/brands/apparel/chemistry.jpg";
 	bgImages[13] = "images/brands/apparel/fab.jpg";
