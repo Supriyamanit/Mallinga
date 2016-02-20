@@ -21,6 +21,14 @@ LaunchScreen::LaunchScreen() {
 }
 
 void LaunchScreen::buildStartButton() {
+  UIView* rippleLayer = new UIView();
+	UIImage *img2 = UIImage::imageNamed("images/ripple.png");
+  rippleLayer = UIImageView::initWithImage(img2);
+  rippleLayer->setSize(200, 200);
+  rippleLayer->setContentGravity(CLUTTER_CONTENT_GRAVITY_RESIZE_FILL);
+  rippleLayer->setPosition((SCREEN_WIDTH - rippleLayer->getWidth())/2, (SCREEN_HEIGHT - rippleLayer->getHeight())/2);
+  containerView->addSubView(rippleLayer);
+
 	touchMe = new UIView();
 	UIImage *img = UIImage::imageNamed("images/start.png");
   touchMe = UIImageView::initWithImage(img);
@@ -29,15 +37,31 @@ void LaunchScreen::buildStartButton() {
   touchMe->setPosition((SCREEN_WIDTH - touchMe->getWidth())/2, (SCREEN_HEIGHT - touchMe->getHeight())/2);
   containerView->addSubView(touchMe);
 
- //  CATransition* rippleAnimation = new CATransition("scale-x");
-	// scaleDownXTransition->setFromValue(G_TYPE_DOUBLE, view->getScaleX());
-	// scaleDownXTransition->setToValue(G_TYPE_DOUBLE, 0.0);
-	// scaleDownXTransition->setDuration(250);
-	// scaleDownXTransition->setDelegate(this);
-	// scaleDownXTransition->setData("type", (char*)"scale-x-down");
-	// scaleDownXTransition->setData("actor", view);
-	// view->addTransition(scaleDownXTransition, "scale-x-down");
-	// view->setPivotPoint(0.5,0.5);
+
+
+  CATransition* rippleAnimationX = new CATransition("scale-x");
+	rippleAnimationX->setFromValue(G_TYPE_DOUBLE, rippleLayer->getScaleX());
+	rippleAnimationX->setToValue(G_TYPE_DOUBLE, 1.25);
+	rippleAnimationX->setDuration(1050);
+	rippleLayer->addTransition(rippleAnimationX, "scale-x-up");
+	rippleAnimationX->setRepeatCount(-1);
+	rippleLayer->setPivotPoint(0.5,0.5);
+
+	CATransition* rippleAnimationY = new CATransition("scale-y");
+	rippleAnimationY->setFromValue(G_TYPE_DOUBLE, rippleLayer->getScaleX());
+	rippleAnimationY->setToValue(G_TYPE_DOUBLE, 1.25);
+	rippleAnimationY->setDuration(1050);
+	rippleLayer->addTransition(rippleAnimationY, "scale-y-up");
+	rippleAnimationY->setRepeatCount(-1);
+	rippleLayer->setPivotPoint(0.5,0.5);
+
+	CATransition* fadeoffTransition = new CATransition("opacity");
+	fadeoffTransition->setFromValue(G_TYPE_UINT, 255);
+	fadeoffTransition->setToValue(G_TYPE_UINT, 0);
+	fadeoffTransition->setDuration(1050);
+	rippleLayer->addTransition(fadeoffTransition, "fadeoff");
+	fadeoffTransition->setRepeatCount(-1);
+	
 }
 
 void LaunchScreen::buildLogo() {
