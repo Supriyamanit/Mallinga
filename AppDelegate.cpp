@@ -42,8 +42,10 @@ void AppDelegate::didLaunchApplicationWithOption(int argc, char** argv, UIApplic
 	
 	// launchScreen = new LaunchScreen();
 	// globalSuperView->addSubView(launchScreen->containerView);
-	categoryGrid = new CategoryView(3,5);
-  globalSuperView->addSubView(categoryGrid->containerView);
+	// categoryGrid = new CategoryView(3,5);
+ //  globalSuperView->addSubView(categoryGrid->containerView);
+  ShopCollectionView *shopView = new ShopCollectionView();
+  globalSuperView->addSubView(shopView);
 }
 
 CGSize AppDelegate::resizeScreen() {

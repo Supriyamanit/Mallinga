@@ -33,18 +33,31 @@ static void on_post_paint_cb(void) {
     cogl_clip_pop();
 }
 
-ShopCard::ShopCard() {
+
+static UILabel* getLabelWithText(const char *text){
+    UILabel  *label  = new UILabel();
+    label->setText(text);
+    label->setFontWithSize("DIN Condensed,30px");
+    label->setTextColor(UIColorFromRGB(0x434343));
+    return label;
+}
+
+ShopCard::ShopCard(ShopDetails *details) {
     containerView = new UIView();
     g_signal_connect(containerView->view, "paint", G_CALLBACK(on_paint_cb), NULL);
     g_signal_connect_after(containerView->view, "paint", G_CALLBACK(on_post_paint_cb), NULL);
     this->addSubView(containerView);
-
+    gfloat ypos = 1080*3/5;
     char imagePath[100];
     sprintf(imagePath,"images/shops/shoe.png");
     image = UIImageView::initWithImage(UIImage::imageNamed(imagePath));
-    image->setSize(550,1080*3/5);
+    image->setSize(550,ypos);
     containerView->addSubView(image);
     image->setContentGravity(CLUTTER_CONTENT_GRAVITY_RESIZE_FILL);
+
+    title = getLabelWithText(details->title);
+    this->addSubView(title);
+    title->setPosition(0,ypos);
 }
 
 ShopCard::ShopCard(const ShopCard& orig) {
