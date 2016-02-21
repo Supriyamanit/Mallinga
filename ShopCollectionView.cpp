@@ -24,6 +24,7 @@ ShopCollectionView::ShopCollectionView() {
   this->addGestureRecognizer(panGRecognizer);
   this->setUserInteractionEnabled(TRUE);
   panGRecognizer->setDelegate(this);
+  panGRecognizer->setInterpolate(TRUE);
 
 
 	for(int i=0;i<10;i++){
