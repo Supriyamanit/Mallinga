@@ -85,9 +85,10 @@ LaunchScreen::LaunchScreen(const LaunchScreen& orig) {
 LaunchScreen::~LaunchScreen() {
 }
 
-
 void LaunchScreen::didTapViewWithEvent(ClutterTapAction *event, UIView *view){
+	containerView->setEasing(0,1000,CLUTTER_LINEAR);
 	containerView->setAlpha(0);
+	containerView->restoreEasing();
 	CategoryView* categoryGrid = new CategoryView(3,5);
 	globalSuperView->addSubView(categoryGrid->containerView);
 }

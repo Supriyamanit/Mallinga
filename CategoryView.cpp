@@ -80,43 +80,7 @@ CategoryView::~CategoryView() {
 }
 
 void CategoryView::didTapBigButton(UIView *view) {
-  g_print("hello and comes here");
   ShopCollectionView* shopView = new ShopCollectionView();
   containerView->setAlpha(0);
   globalSuperView->addSubView(shopView);
- //  for(int i=0; i<8; i++){
- //    gridCards[i]->midLayer->removeAllTransition();
- //    gridCards[i]->midLayer->setData("transitionState", (char*)"off");
- //  }
-	
- //  for(int i=0; i<8; i++){
-
-    
- //    gfloat width = gridCards[i]->getWidth();
- //    gfloat height = gridCards[i]->getHeight();
- //    gridCards[i]->setPivotPoint(0.0,0.0);
- //    gridCards[i]->setEasing(0,1250,CLUTTER_LINEAR);
- //    if(i == GPOINTER_TO_INT(view->getData("index"))){
- //      gridCards[i]->midLayer->setEasing(0,1250,CLUTTER_LINEAR);
- //      gridCards[i]->midLayer->setAlpha(0);  
- //    }
- //    gridCards[i]->setScaleWithGravity(0.25,0.25,CLUTTER_GRAVITY_NORTH_WEST);
- //    gridCards[i]->setPosition(50,(SCREEN_HEIGHT - 20)/8*i +10);
-	// }
-
- //  BrandGridView *brandGrid = buildBrandGrid(GPOINTER_TO_INT(view->getData("index")));
- //  containerView->addSubView(brandGrid->containerView);
- //  brandGrid->containerView->setPosition(SCREEN_WIDTH,0);
- //  brandGrid->containerView->setAlpha(0);
- //  brandGrid->containerView->setEasing(0,1250,CLUTTER_LINEAR);
- //  brandGrid->containerView->setAlpha(255);
- //  brandGrid->containerView->setPosition(200,0);
-}
-
-BrandGridView* CategoryView::buildBrandGrid(int i){
-  switch(i){
-    case 0: 
-      return new BrandGridView(4,5);
-      break;
-  }
 }
