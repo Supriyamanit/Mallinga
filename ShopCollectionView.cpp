@@ -19,6 +19,12 @@ ShopCollectionView::ShopCollectionView() {
 	boxLayout->setSpacing(10);
 	this->setLayoutManager(boxLayout);
 	this->setSize(1920,1080);
+	UIPanGestureRecognizer *panGRecognizer = new UIPanGestureRecognizer();
+	panGRecognizer->setAxis(CLUTTER_PAN_X_AXIS);
+  this->addGestureRecognizer(panGRecognizer);
+  this->setUserInteractionEnabled(TRUE);
+  panGRecognizer->setDelegate(this);
+
 
 	for(int i=0;i<10;i++){
 		ShopDetails *details = g_new0(ShopDetails,1);
@@ -40,3 +46,9 @@ ShopCollectionView::ShopCollectionView(const ShopCollectionView& orig) {
 ShopCollectionView::~ShopCollectionView() {
 }
 
+gboolean ShopCollectionView::videDidPan(UIPanGestureRecognizer *recognizer, gboolean isInterpolated){
+  return TRUE;
+}
+
+void ShopCollectionView::panDidEnd(UIPanGestureRecognizer *recognizer) {  
+}

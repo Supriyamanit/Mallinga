@@ -17,11 +17,13 @@
  #include <UIKit.h>
  #include "ShopCard.h"
 
-class ShopCollectionView: public UIView {
+class ShopCollectionView: public UIView , public UIPanGestureProtocol{
 public:
     ShopCollectionView();
     ShopCollectionView(const ShopCollectionView& orig);
     virtual ~ShopCollectionView();
+    gboolean videDidPan(UIPanGestureRecognizer *regognizer, gboolean isInterpolated) override;
+    void panDidEnd(UIPanGestureRecognizer *recognizer) override;
 private:
 	UIBoxLayout *boxLayout;
 	ShopCard *card[10];
